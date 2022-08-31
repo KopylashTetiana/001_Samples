@@ -7,7 +7,7 @@ import java.sql.*;
  */
 public class Main {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/carsshop";
+    private static final String URL = "jdbc:mysql://localhost:3306/carsshop?useSSL=false";
     private static final String LOGIN = "root";
     private static final String PASSWORD = "root";
 
@@ -25,7 +25,7 @@ public class Main {
             statement = connection.prepareStatement(DELETE);
 
             statement.setString(2,"Title");
-            statement.setInt(1,2);
+            statement.setInt(1,1    );
 
             int res = statement.executeUpdate();
             System.out.println(res);

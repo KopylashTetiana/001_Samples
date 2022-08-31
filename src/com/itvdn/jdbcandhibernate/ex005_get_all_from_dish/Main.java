@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class Main {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/carsshop";
+    private static final String URL = "jdbc:mysql://localhost:3306/carsshop?useSSL=false";
     private static final String LOGIN = "root";
     private static final String PASSWORD = "root";
 
@@ -43,7 +43,7 @@ public class Main {
                 System.out.println(id + " " + " " + title + " " + description
                                   + " " + rating + " " + published + " " + date
                                    );
-
+                System.out.println(Arrays.toString(bytes));
 //                for (int i = 0; i < bytes.length; i++) {
 //                    System.out.println(bytes[i]);
 //                }

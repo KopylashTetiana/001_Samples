@@ -10,13 +10,13 @@ import java.util.Calendar;
  */
 public class Main {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/carsshop";
+    private static final String URL = "jdbc:mysql://localhost:3306/carsshop?useSSL=false";
     private static final String LOGIN = "root";
     private static final String PASSWORD = "root";
 
-    private static final String INSER_NEW = "INSERT INTO dish(title, description, rating, published, created, icon) "
+    private static final String INSERT_NEW = "INSERT INTO dish(title, description, rating, published, created, icon) "
                                             + " VALUES(?,?,?,?,?,?)";
-
+    //Question marks mean that we add values instead of '?' using methods.
     public static void main(String[] args) {
         registerDriver();
 
@@ -27,7 +27,7 @@ public class Main {
 
         try {
             connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
-            statement = connection.prepareStatement(INSER_NEW);
+            statement = connection.prepareStatement(INSERT_NEW);
 
             statement.setString(1, "Title");
             statement.setString(2, "Description");
